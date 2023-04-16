@@ -39,6 +39,6 @@ $ python3 post_discord.py
 
 
 ## References
-
+- https://zenn.dev/karaage0703/articles/926f18ba04e093
 - https://zenn.dev/ozushi/articles/ebe3f47bf50a86
 - https://github.com/ftnext/meetup-host-ops
