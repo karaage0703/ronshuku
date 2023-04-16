@@ -27,3 +27,4 @@ $ python3 ronshuku.py
 ## References
 
 - https://zenn.dev/ozushi/articles/ebe3f47bf50a86
+- https://github.com/ftnext/meetup-host-ops

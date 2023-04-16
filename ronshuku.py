@@ -55,7 +55,7 @@ def get_arxiv(query: str, paper_all_numb: int = 5, paper_select_numb: int = 3):
 
 
 if __name__ == "__main__":
-    paper_list = get_arxiv(query='deep learning', paper_all_numb=10, paper_select_numb=3)
+    paper_list = get_arxiv(query='deep learning', paper_all_numb=100, paper_select_numb=3)
     for i, paper in enumerate(paper_list):
         try:
             print(str(i+1) + '本目の論文')
