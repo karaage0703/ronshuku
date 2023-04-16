@@ -18,11 +18,25 @@ Write your open api secret key to `.config` file
 key = your_secret_open_api_key
 ```
 
+Optional(only posting discord): Write your discord webhook url to `.config` file
+```
+[discord_webhook]
+url = your_discord_webhook_url
+```
+
 ## Usage
+### Summarize paper
 
 ```sh
 $ python3 ronshuku.py
 ```
+
+### Post Discord
+
+```sh
+$ python3 post_discord.py
+```
+
 
 ## References
 
