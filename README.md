@@ -26,9 +26,14 @@ url = your_discord_webhook_url
 
 ## Usage
 ### Summarize paper
-
+Get random papers from AI field:
 ```sh
 $ python3 ronshuku.py
+```
+
+Specific paper with arXiv ID:
+```sh
+$ python3 ronshuku.py --paper_id="<paper id>"
 ```
 
 ### Post Discord
