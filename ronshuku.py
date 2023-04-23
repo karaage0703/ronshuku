@@ -3,6 +3,7 @@ import openai
 import configparser
 import arxiv
 import random
+import argparse
 
 config = configparser.ConfigParser()
 config.read('.config')
@@ -54,11 +55,27 @@ def get_arxiv(query: str, paper_all_numb: int = 5, paper_select_numb: int = 3):
     return random.sample(list(result), k=paper_select_numb)
 
 
+def get_specific_paper_from_arxiv(arxiv_id: str):
+    result = arxiv.Search(id_list=[arxiv_id]).results()
+
+    return list(result)
+
+
 if __name__ == "__main__":
-    paper_list = get_arxiv(query='deep learning', paper_all_numb=100, paper_select_numb=3)
-    for i, paper in enumerate(paper_list):
-        try:
-            print(str(i+1) + '本目の論文')
-            print(summarize_paper(paper))
-        except:
-            print('error')
+    parser = argparse.ArgumentParser(description='--paper_id is arxiv paper id')
+
+    parser.add_argument("-i", "--paper_id", type=str, default="None", help="arxiv paper id")
+
+    args = parser.parse_args()
+
+    if args.paper_id != "None":
+        paper = get_specific_paper_from_arxiv(arxiv_id=args.paper_id)
+        print(summarize_paper(paper[0]))
+    else:
+        paper_list = get_arxiv(query='deep learning', paper_all_numb=100, paper_select_numb=3)
+        for i, paper in enumerate(paper_list):
+            try:
+                print(str(i+1) + '本目の論文')
+                print(summarize_paper(paper))
+            except:
+                print('error')
